@@ -1,0 +1,41 @@
+{
+  "productName": "rhwp",
+  "version": "0.7.2",
+  "identifier": "io.github.yschungmr.rhwp",
+  "build": {
+    "beforeDevCommand": "cd ../rhwp-studio && npm run dev",
+    "beforeBuildCommand": "cd ../rhwp-studio && npm run build",
+    "devUrl": "http://localhost:7700",
+    "frontendDist": "../../rhwp-studio/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "rhwp",
+        "width": 1280,
+        "height": 900,
+        "minWidth": 800,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; worker-src blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "linux": {
+      "deb": {
+        "depends": ["libwebkit2gtk-4.1-0", "libgtk-3-0"]
+      }
+    }
+  }
+}

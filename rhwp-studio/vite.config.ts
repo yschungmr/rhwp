@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import { readFileSync } from 'fs';
+import { readFileSync, realpathSync } from 'fs';
 
 const pkg = JSON.parse(readFileSync(resolve(__dirname, 'package.json'), 'utf-8'));
 
@@ -19,7 +19,9 @@ export default defineConfig({
     port: 7700,
     allowedHosts: true,
     fs: {
-      allow: ['..'],
+      // realpathSync resolves the ../pkg symlink to its real path,
+      // which Vite uses when checking fs.allow against requested file paths.
+      allow: ['..', realpathSync(resolve(__dirname, '../pkg'))],
     },
   },
 });

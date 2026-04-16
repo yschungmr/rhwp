@@ -1,0 +1,15 @@
+{
+  "name": "rhwp-desktop",
+  "version": "0.7.2",
+  "private": true,
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2"
+  }
+}

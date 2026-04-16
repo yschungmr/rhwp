@@ -53,6 +53,9 @@ Thumbs.db
 .env
 .env.docker
 
+# Git Worktrees
+.worktrees/
+
 # E2E 스크린샷
 rhwp-studio/e2e/screenshots/
 
@@ -77,3 +80,10 @@ rhwp-chrome/dist/
 rhwp-safari/dist/
 rhwp-safari/HWP Viewer/
 rhwp-safari/.DS_Store
+
+# Tauri 데스크탑 빌드 산출물
+rhwp-desktop/src-tauri/target/
+rhwp-desktop/package-lock.json
+
+# Superpowers 작업 문서 (로컬 전용)
+docs/superpowers/
